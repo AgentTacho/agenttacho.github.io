@@ -4,6 +4,8 @@ import Hero from '~/components/agentmeter/Hero.astro';
 import MenuBarStrip from '~/components/agentmeter/MenuBarStrip.astro';
 import FeatureGrid from '~/components/agentmeter/FeatureGrid.astro';
 import SmallThings from '~/components/agentmeter/SmallThings.astro';
+import Privacy from '~/components/agentmeter/Privacy.astro';
+import Compare from '~/components/agentmeter/Compare.astro';
 
 import { getLatestRelease } from '~/utils/release';
 
@@ -20,4 +22,6 @@ const release = await getLatestRelease(fetch, process.env.GITHUB_TOKEN);
   <MenuBarStrip />
   <FeatureGrid />
   <SmallThings />
+  <Privacy />
+  <Compare />
 </Layout>

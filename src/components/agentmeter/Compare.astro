@@ -1,0 +1,73 @@
+---
+// Comparison (brainstorm 18, page structure 7): a dated, fair table against
+// the closest alternatives. Facts live in src/data/comparison.ts with the date
+// they were checked. Own table instead of the template's Comparison widget,
+// which labels the highlighted column "Recommended".
+import { Icon } from 'astro-icon/components';
+import { comparison } from '~/data/comparison';
+
+const checked = new Date(`${comparison.checked}T00:00:00Z`).toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+  timeZone: 'UTC',
+});
+---
+
+<section id="compare" class="not-prose mx-auto max-w-6xl scroll-mt-[72px] px-4 pt-24 sm:px-6">
+  <p class="text-center text-sm font-bold uppercase tracking-wider text-eyebrow">Compare</p>
+  <h2 class="mt-2 text-center font-heading text-3xl font-bold tracking-tight text-heading md:text-4xl">
+    How it compares.
+  </h2>
+  <p class="mx-auto mt-4 max-w-2xl text-center text-lg text-muted">
+    CodexBar covers far more providers. AgentMeter covers fewer, lets you set a budget for any pay-per-token account,
+    shares one budget across accounts, and keeps the menu bar to one line.
+  </p>
+  <div class="mt-10 overflow-x-auto rounded-2xl border border-line bg-surface">
+    <table class="w-full min-w-[46rem] border-collapse text-left text-sm">
+      <thead>
+        <tr class="border-b border-line">
+          <th scope="col" class="sticky left-0 z-10 w-[22%] bg-surface px-4 py-4"></th>
+          {
+            comparison.columns.map((column, index) => (
+              <th
+                scope="col"
+                class:list={[
+                  'px-4 py-4 text-center font-heading text-base font-bold text-heading',
+                  index === 0 && 'bg-tint',
+                ]}
+              >
+                {column}
+              </th>
+            ))
+          }
+        </tr>
+      </thead>
+      <tbody>
+        {
+          comparison.rows.map((row) => (
+            <tr class="border-b border-line last:border-0">
+              <th scope="row" class="sticky left-0 z-10 bg-surface px-4 py-3 font-medium text-default">
+                {row.label}
+              </th>
+              {row.values.map((value, index) => (
+                <td class:list={['px-4 py-3 text-center text-muted', index === 0 && 'bg-tint text-default']}>
+                  {value === true ? (
+                    <Icon name="tabler:circle-check-filled" class="mx-auto h-6 w-6 text-accent" aria-label="Yes" />
+                  ) : value === false ? (
+                    <Icon name="tabler:minus" class="mx-auto h-5 w-5 opacity-40" aria-label="No" />
+                  ) : (
+                    value
+                  )}
+                </td>
+              ))}
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
+  </div>
+  <p class="mt-3 text-center text-xs text-muted">
+    As of {checked}, from each project’s README. Corrections welcome as a GitHub issue.
+  </p>
+</section>
