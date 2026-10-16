@@ -1,10 +1,13 @@
 ---
 // AgentMeter logo: the app icon next to the name.
+import { Image } from 'astro:assets';
+import icon from '~/assets/agentmeter/icon.png';
 ---
 
 <span
-  class="self-center inline-flex items-center gap-2 font-heading text-xl font-bold text-heading"
+  class="self-center inline-flex items-center gap-2.5 font-heading text-xl font-bold text-heading"
   aria-label="AgentMeter home"
 >
+  <Image src={icon} alt="" width={32} height={32} class="h-8 w-8" loading="eager" />
   AgentMeter
 </span>

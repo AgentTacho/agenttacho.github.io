@@ -2,7 +2,8 @@
 // AgentMeter brand palette and fonts mapped onto AstroWind's --aw-* variables.
 // Fonts come from Astro's native Fonts API (see `fonts` in astro.config.ts and
 // <Font /> in Layout.astro): Sora for headings, Source Sans 3 for body.
-// Colours follow the AgentMeter app icon.
+// Colours follow the AgentMeter app icon: deep teal #055653, cyan #2BDED4,
+// amber #FDBC3B, cream #FCF7EB.
 ---
 
 <style is:inline>
@@ -11,22 +12,27 @@
     --aw-font-serif: var(--font-source-sans);
     --aw-font-heading: var(--font-sora);
 
-    /* Primary action is terracotta "action" (#AD4933); white text is 5.56:1. */
-    --aw-color-primary: rgb(173 73 51);
-    --aw-color-secondary: rgb(145 61 43);
-    --aw-color-accent: rgb(205 103 77);
-    /* Links and focus use the teal "focus" token (#1C6A75), 5.52:1 on sky. */
-    --aw-color-link: rgb(28 106 117);
+    /* Primary action is deep teal; cream text on it is above 8:1. */
+    --aw-color-primary: rgb(5 86 83);
+    --aw-color-secondary: rgb(4 66 64);
+    --aw-color-on-primary: rgb(252 247 235);
+    /* Accent: the darker teal used for the second headline line. */
+    --aw-color-accent: rgb(10 143 135);
+    --aw-color-link: rgb(10 120 113);
+    --aw-color-eyebrow: rgb(201 138 18);
 
-    --aw-color-text-heading: rgb(20 60 67);
-    --aw-color-text-default: rgb(20 60 67);
-    --aw-color-text-muted: rgb(77 98 103);
-    --aw-color-bg-page: rgb(248 251 250);
+    --aw-color-text-heading: rgb(14 59 58);
+    --aw-color-text-default: rgb(14 59 58);
+    --aw-color-text-muted: rgb(75 95 94);
+    --aw-color-bg-page: rgb(247 248 247);
+    --aw-color-bg-page-dark: rgb(7 26 26);
 
-    --aw-color-bg-page-dark: rgb(14 42 48);
+    --aw-color-surface: rgb(255 255 255);
+    --aw-color-line: rgb(221 228 227);
+    --aw-color-tint: rgb(234 243 242);
 
     ::selection {
-      background-color: rgb(229 186 104 / 45%);
+      background-color: rgb(43 222 212 / 35%);
     }
   }
 
@@ -35,19 +41,26 @@
     --aw-font-serif: var(--font-source-sans);
     --aw-font-heading: var(--font-sora);
 
-    --aw-color-primary: rgb(173 73 51);
-    --aw-color-secondary: rgb(145 61 43);
-    --aw-color-accent: rgb(229 186 104);
-    --aw-color-link: rgb(143 211 220);
+    /* Cyan action with deep teal text. */
+    --aw-color-primary: rgb(43 222 212);
+    --aw-color-secondary: rgb(113 233 226);
+    --aw-color-on-primary: rgb(5 42 40);
+    --aw-color-accent: rgb(43 222 212);
+    --aw-color-link: rgb(43 222 212);
+    --aw-color-eyebrow: rgb(253 188 59);
 
-    --aw-color-text-heading: rgb(248 251 250);
-    --aw-color-text-default: rgb(234 243 242);
-    --aw-color-text-muted: rgb(234 243 242 / 70%);
-    --aw-color-bg-page: rgb(14 42 48);
+    --aw-color-text-heading: rgb(234 244 243);
+    --aw-color-text-default: rgb(234 244 243);
+    --aw-color-text-muted: rgb(157 181 179);
+    --aw-color-bg-page: rgb(7 26 26);
+
+    --aw-color-surface: rgb(13 38 38);
+    --aw-color-line: rgb(30 59 58);
+    --aw-color-tint: rgb(11 34 34);
 
     ::selection {
-      background-color: rgb(229 186 104 / 35%);
-      color: rgb(248 251 250);
+      background-color: rgb(43 222 212 / 30%);
+      color: rgb(234 244 243);
     }
   }
 </style>
