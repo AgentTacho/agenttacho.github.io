@@ -1,0 +1,66 @@
+site:
+  name: AgentMeter
+  site: 'https://agentmeter-dev.github.io'
+  base: '/'
+  trailingSlash: false
+
+# Default SEO metadata
+metadata:
+  title:
+    default: 'AgentMeter: usage at a glance'
+    template: '%s | AgentMeter'
+  description: 'Plan limits and budgets for Claude Code, Codex and OpenCode, in one line of your menu bar.'
+  robots:
+    index: true
+    follow: true
+  openGraph:
+    site_name: AgentMeter
+    images:
+      - url: '~/assets/images/default.png'
+        width: 1448
+        height: 1086
+    type: website
+
+i18n:
+  language: en
+  textDirection: ltr
+
+apps:
+  blog:
+    isEnabled: false
+    postsPerPage: 8
+
+    post:
+      isEnabled: false
+      permalink: '/%slug%'
+      robots:
+        index: false
+
+    list:
+      isEnabled: false
+      pathname: 'blog'
+      robots:
+        index: false
+
+    category:
+      isEnabled: false
+      pathname: 'category'
+      robots:
+        index: false
+
+    tag:
+      isEnabled: false
+      pathname: 'tag'
+      robots:
+        index: false
+
+    isRelatedPostsEnabled: false
+    relatedPostsCount: 4
+
+analytics:
+  vendors:
+    googleAnalytics:
+      id: null
+
+ui:
+  theme: 'system' # Values: "system" | "light" | "dark" | "light:only" | "dark:only"

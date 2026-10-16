@@ -1,0 +1,53 @@
+---
+// AgentMeter brand palette and fonts mapped onto AstroWind's --aw-* variables.
+// Fonts come from Astro's native Fonts API (see `fonts` in astro.config.ts and
+// <Font /> in Layout.astro): Sora for headings, Source Sans 3 for body.
+// Colours follow the AgentMeter app icon.
+---
+
+<style is:inline>
+  :root {
+    --aw-font-sans: var(--font-source-sans);
+    --aw-font-serif: var(--font-source-sans);
+    --aw-font-heading: var(--font-sora);
+
+    /* Primary action is terracotta "action" (#AD4933); white text is 5.56:1. */
+    --aw-color-primary: rgb(173 73 51);
+    --aw-color-secondary: rgb(145 61 43);
+    --aw-color-accent: rgb(205 103 77);
+    /* Links and focus use the teal "focus" token (#1C6A75), 5.52:1 on sky. */
+    --aw-color-link: rgb(28 106 117);
+
+    --aw-color-text-heading: rgb(20 60 67);
+    --aw-color-text-default: rgb(20 60 67);
+    --aw-color-text-muted: rgb(77 98 103);
+    --aw-color-bg-page: rgb(248 251 250);
+
+    --aw-color-bg-page-dark: rgb(14 42 48);
+
+    ::selection {
+      background-color: rgb(229 186 104 / 45%);
+    }
+  }
+
+  .dark {
+    --aw-font-sans: var(--font-source-sans);
+    --aw-font-serif: var(--font-source-sans);
+    --aw-font-heading: var(--font-sora);
+
+    --aw-color-primary: rgb(173 73 51);
+    --aw-color-secondary: rgb(145 61 43);
+    --aw-color-accent: rgb(229 186 104);
+    --aw-color-link: rgb(143 211 220);
+
+    --aw-color-text-heading: rgb(248 251 250);
+    --aw-color-text-default: rgb(234 243 242);
+    --aw-color-text-muted: rgb(234 243 242 / 70%);
+    --aw-color-bg-page: rgb(14 42 48);
+
+    ::selection {
+      background-color: rgb(229 186 104 / 35%);
+      color: rgb(248 251 250);
+    }
+  }
+</style>
