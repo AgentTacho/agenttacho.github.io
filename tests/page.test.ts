@@ -42,6 +42,12 @@ test('has the download button with a version', { skip }, () => {
   assert.ok(download[2].replace(/<[^>]+>/g, '').includes(`v${version}`), 'the button names the version');
 });
 
+test('labels the budget row without a period', { skip }, () => {
+  // ClaudeBar's Bedrock budget is daily, so the row must not say "weekly or monthly".
+  assert.ok(text.includes('Dollar budgets you set'), 'budget row label');
+  assert.ok(!/weekly or monthly dollar budgets/i.test(text), 'no period in the row label');
+});
+
 test('states the system requirements', { skip }, () => {
   // The app README: "macOS 14 or newer on Apple Silicon".
   assert.ok(text.includes('macOS 14+ on Apple Silicon'), 'requirements line names Apple Silicon');

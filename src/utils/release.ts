@@ -41,7 +41,10 @@ function downloadUrl(version: string, dmg: string): string {
 }
 
 function fromFallback(reason: string): Release {
-  console.warn(`[release] using fallback ${fallback.version}: ${reason}`);
+  const message = `[release] using fallback ${fallback.version}: ${reason}`;
+  // In GitHub Actions a ::warning:: line shows up on the run, so a build that
+  // deploys the stored version instead of the latest one does not go unnoticed.
+  console.warn(process.env.CI ? `::warning::${message}` : message);
   return {
     version: fallback.version,
     dmgUrl: downloadUrl(fallback.version, fallback.dmg),

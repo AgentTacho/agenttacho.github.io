@@ -82,3 +82,36 @@ test('sends the token when given', async () => {
   await getLatestRelease(stubFetch({ [API]: { status: 403 } }, seen), 't');
   assert.equal(seen[0]?.headers.get('authorization'), 'Bearer t');
 });
+
+test('keeps the token off the release-info download', async () => {
+  const seen: Request[] = [];
+  await getLatestRelease(
+    stubFetch(
+      {
+        [API]: { status: 200, body: latest('v0.4.1', ['AgentMeter-0.4.1.dmg', 'release-info.json']) },
+        [INFO]: { status: 200, body: { version: '0.4.1', dmg: 'AgentMeter-0.4.1.dmg' } },
+      },
+      seen
+    ),
+    't'
+  );
+  assert.equal(seen[1]?.url, INFO);
+  assert.equal(seen[1]?.headers.get('authorization'), null);
+});
+
+test('flags a fallback as a GitHub Actions warning in CI', async (t) => {
+  const lines: string[] = [];
+  t.mock.method(console, 'warn', (line: string) => lines.push(line));
+  const previous = process.env.CI;
+  process.env.CI = 'true';
+  try {
+    await getLatestRelease(stubFetch({ [API]: { status: 403 } }));
+  } finally {
+    if (previous === undefined) delete process.env.CI;
+    else process.env.CI = previous;
+  }
+  assert.ok(
+    lines.some((line) => line.startsWith('::warning::')),
+    `a ::warning:: line, got ${JSON.stringify(lines)}`
+  );
+});

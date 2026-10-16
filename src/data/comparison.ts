@@ -26,7 +26,7 @@ export const comparison: { checked: string; columns: string[]; rows: ComparisonR
       ],
     },
     {
-      label: 'Weekly or monthly dollar budgets you set',
+      label: 'Dollar budgets you set',
       values: ['Any pay-per-token account', 'Bedrock, monthly', false, 'Bedrock daily, Claude API monthly', false],
     },
     {
