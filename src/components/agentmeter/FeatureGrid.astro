@@ -1,0 +1,42 @@
+---
+// Feature grid (brainstorm 18, page structure 4): nine equal cards in three
+// labelled rows. Equal sizes are a requirement: every card has the same image
+// height and, from the large breakpoint on, the same body height.
+import Shot from '~/components/agentmeter/Shot.astro';
+import { featureRows } from '~/data/features';
+---
+
+<section id="features" class="not-prose mx-auto max-w-6xl scroll-mt-[72px] px-4 pt-20 sm:px-6">
+  <p class="text-center text-sm font-bold uppercase tracking-wider text-eyebrow">Features</p>
+  <h2 class="mt-2 text-center font-heading text-3xl font-bold tracking-tight text-heading md:text-4xl">
+    Everything in one menu.
+  </h2>
+  {
+    featureRows.map((row) => (
+      <div class="mt-12">
+        <h3 class="mb-4 text-sm font-bold uppercase tracking-wider text-muted" data-feature-row>
+          {row.label}
+        </h3>
+        <div class="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
+          {row.features.map((feature) => (
+            <article class="flex flex-col overflow-hidden rounded-2xl border border-line bg-surface" data-feature-card>
+              <div class="flex h-[150px] items-center justify-center bg-panel p-3.5">
+                <Shot
+                  stem={feature.stem}
+                  alt={feature.alt}
+                  class="max-h-full w-auto max-w-full rounded object-contain"
+                  widths={[400, 800]}
+                  sizes="(min-width: 1024px) 340px, 90vw"
+                />
+              </div>
+              <div class="px-5 pt-4 pb-5 lg:h-[10.5rem]">
+                <h4 class="font-heading text-lg font-bold text-heading">{feature.title}</h4>
+                <p class="mt-1.5 text-[0.95rem] leading-relaxed text-muted" set:html={feature.body} />
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    ))
+  }
+</section>

@@ -2,6 +2,8 @@
 import Layout from '~/layouts/PageLayout.astro';
 import Hero from '~/components/agentmeter/Hero.astro';
 import MenuBarStrip from '~/components/agentmeter/MenuBarStrip.astro';
+import FeatureGrid from '~/components/agentmeter/FeatureGrid.astro';
+import SmallThings from '~/components/agentmeter/SmallThings.astro';
 
 import { getLatestRelease } from '~/utils/release';
 
@@ -16,4 +18,6 @@ const release = await getLatestRelease(fetch, process.env.GITHUB_TOKEN);
 <Layout metadata={metadata}>
   <Hero release={release} />
   <MenuBarStrip />
+  <FeatureGrid />
+  <SmallThings />
 </Layout>

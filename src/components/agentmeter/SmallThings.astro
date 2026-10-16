@@ -1,0 +1,22 @@
+---
+// The small things (brainstorm 18, page structure 5): one line each, no
+// screenshots, two columns on wider screens.
+import { Icon } from 'astro-icon/components';
+import { smallThings } from '~/data/features';
+---
+
+<section class="not-prose mx-auto max-w-6xl px-4 pt-14 sm:px-6">
+  <h3 class="mb-5 text-sm font-bold uppercase tracking-wider text-muted">And the small things</h3>
+  <ul class="grid grid-cols-1 gap-x-10 gap-y-5 md:grid-cols-2">
+    {
+      smallThings.map((thing) => (
+        <li class="flex gap-3" data-small-thing>
+          <Icon name={thing.icon} class="mt-0.5 h-6 w-6 shrink-0 text-accent" />
+          <p class="leading-relaxed text-muted">
+            <strong class="font-semibold text-heading">{thing.title}.</strong> <Fragment set:html={thing.body} />
+          </p>
+        </li>
+      ))
+    }
+  </ul>
+</section>
