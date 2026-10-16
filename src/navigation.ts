@@ -39,6 +39,6 @@ export const footerData = {
   secondaryLinks: [{ text: 'License (Apache 2.0)', href: `${GITHUB}/blob/main/LICENSE` }],
   socialLinks: [{ ariaLabel: 'GitHub', icon: 'tabler:brand-github', href: GITHUB }],
   footNote: `
-    Usage at a glance. Nothing more.
+    Built with spec-driven development and Claude Code, by Roland Huß.
   `,
 };

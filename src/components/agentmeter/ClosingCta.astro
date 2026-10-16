@@ -1,0 +1,37 @@
+---
+// Closing call to action (brainstorm 18, page structure 8).
+import { Icon } from 'astro-icon/components';
+
+import { GITHUB, SPONSOR } from '~/navigation';
+import type { Release } from '~/utils/release';
+
+export interface Props {
+  release: Release;
+}
+
+const { release } = Astro.props;
+---
+
+<section class="not-prose mx-auto max-w-6xl px-4 py-24 text-center sm:px-6">
+  <h2 class="font-heading text-3xl font-bold tracking-tight text-heading md:text-4xl">Try it in your menu bar.</h2>
+  <div class="mt-8 flex flex-wrap justify-center gap-3">
+    <a class="btn-primary gap-2" href={release.dmgUrl} data-download>
+      <Icon name="tabler:download" class="h-5 w-5" />
+      Download AgentMeter
+      <span class="font-normal opacity-80">v{release.version}</span>
+    </a>
+    <a class="btn" href={GITHUB} target="_blank" rel="noopener noreferrer">
+      View on GitHub
+      <Icon name="tabler:brand-github" class="ml-2 h-5 w-5" />
+    </a>
+  </div>
+  <p class="mt-6 text-muted">
+    AgentMeter is free. If it saves you a surprise, consider
+    <a
+      class="font-semibold text-link underline underline-offset-4"
+      href={SPONSOR}
+      target="_blank"
+      rel="noopener noreferrer">sponsoring it</a
+    >.
+  </p>
+</section>

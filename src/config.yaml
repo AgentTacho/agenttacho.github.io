@@ -16,9 +16,9 @@ metadata:
   openGraph:
     site_name: AgentMeter
     images:
-      - url: '~/assets/images/default.png'
-        width: 1448
-        height: 1086
+      - url: '~/assets/images/og.png'
+        width: 1200
+        height: 630
     type: website
 
 i18n:

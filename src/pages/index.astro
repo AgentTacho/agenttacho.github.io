@@ -6,6 +6,7 @@ import FeatureGrid from '~/components/agentmeter/FeatureGrid.astro';
 import SmallThings from '~/components/agentmeter/SmallThings.astro';
 import Privacy from '~/components/agentmeter/Privacy.astro';
 import Compare from '~/components/agentmeter/Compare.astro';
+import ClosingCta from '~/components/agentmeter/ClosingCta.astro';
 
 import { getLatestRelease } from '~/utils/release';
 
@@ -24,4 +25,5 @@ const release = await getLatestRelease(fetch, process.env.GITHUB_TOKEN);
   <SmallThings />
   <Privacy />
   <Compare />
+  <ClosingCta release={release} />
 </Layout>
