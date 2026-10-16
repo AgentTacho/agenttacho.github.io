@@ -42,6 +42,11 @@ test('has the download button with a version', { skip }, () => {
   assert.ok(download[2].replace(/<[^>]+>/g, '').includes(`v${version}`), 'the button names the version');
 });
 
+test('states the system requirements', { skip }, () => {
+  // The app README: "macOS 14 or newer on Apple Silicon".
+  assert.ok(text.includes('macOS 14+ on Apple Silicon'), 'requirements line names Apple Silicon');
+});
+
 test('links GitHub and Sponsors', { skip }, () => {
   assert.ok(html.includes(GITHUB), 'GitHub repository link');
   assert.ok(html.includes(SPONSOR), 'Sponsors link');

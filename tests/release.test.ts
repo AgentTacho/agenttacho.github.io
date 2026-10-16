@@ -59,11 +59,21 @@ test('falls back when release-info is missing', async () => {
 test('falls back when the dmg is not an asset', async () => {
   const release = await getLatestRelease(
     stubFetch({
-      [API]: { status: 200, body: latest('v0.4.1', ['AgentMeter-0.4.1.dmg', 'release-info.json']) },
-      [INFO]: { status: 200, body: { version: '0.4.0', dmg: 'AgentMeter-0.4.0.dmg' } },
+      [API]: { status: 200, body: latest('v0.4.1', ['AgentMeter-0.4.1-arm64.dmg', 'release-info.json']) },
+      [INFO]: { status: 200, body: { version: '0.4.1', dmg: 'AgentMeter-0.4.1.dmg' } },
     })
   );
   assert.equal(release.version, '0.4.0');
+  assert.equal(release.fromFallback, true);
+});
+
+test('falls back when the tag does not match release-info', async () => {
+  const release = await getLatestRelease(
+    stubFetch({
+      [API]: { status: 200, body: latest('v0.4.1', ['AgentMeter-0.4.0.dmg', 'release-info.json']) },
+      [INFO]: { status: 200, body: { version: '0.4.0', dmg: 'AgentMeter-0.4.0.dmg' } },
+    })
+  );
   assert.equal(release.fromFallback, true);
 });
 
