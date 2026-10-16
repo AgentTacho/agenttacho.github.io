@@ -1,14 +1,19 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/agentmeter/Hero.astro';
+import MenuBarStrip from '~/components/agentmeter/MenuBarStrip.astro';
+
+import { getLatestRelease } from '~/utils/release';
 
 const metadata = {
   title: 'AgentMeter: usage at a glance',
   ignoreTitleTemplate: true,
 };
+
+const release = await getLatestRelease(fetch, process.env.GITHUB_TOKEN);
 ---
 
 <Layout metadata={metadata}>
-  <section class="mx-auto max-w-6xl px-4 py-16">
-    <h1 class="font-heading text-5xl font-bold text-heading">AgentMeter</h1>
-  </section>
+  <Hero release={release} />
+  <MenuBarStrip />
 </Layout>

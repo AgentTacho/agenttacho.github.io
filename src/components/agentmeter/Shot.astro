@@ -1,0 +1,48 @@
+---
+// One screenshot in its light and dark variant (src/assets/agentmeter/<stem>-light.webp
+// and -dark.webp). The page shows the one that matches the theme, so no light
+// screenshot sits on the dark page.
+import type { ImageMetadata } from 'astro';
+import { Image } from 'astro:assets';
+import { twMerge } from 'tailwind-merge';
+
+export interface Props {
+  stem: string;
+  alt: string;
+  class?: string;
+  loading?: 'eager' | 'lazy';
+  widths?: number[];
+  sizes?: string;
+}
+
+const { stem, alt, class: className = '', loading = 'lazy', widths, sizes } = Astro.props;
+
+const shots = import.meta.glob<{ default: ImageMetadata }>('/src/assets/agentmeter/*-{light,dark}.webp', {
+  eager: true,
+});
+
+function shot(variant: 'light' | 'dark'): ImageMetadata {
+  const found = shots[`/src/assets/agentmeter/${stem}-${variant}.webp`];
+  if (!found) throw new Error(`missing screenshot ${stem}-${variant}.webp`);
+  return found.default;
+}
+---
+
+<Image
+  src={shot('light')}
+  alt={alt}
+  loading={loading}
+  widths={widths}
+  sizes={sizes}
+  class={twMerge('dark:hidden', className)}
+  data-theme-variant="light"
+/>
+<Image
+  src={shot('dark')}
+  alt={alt}
+  loading={loading}
+  widths={widths}
+  sizes={sizes}
+  class={twMerge('hidden dark:block', className)}
+  data-theme-variant="dark"
+/>

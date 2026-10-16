@@ -1,0 +1,25 @@
+---
+// Menu bar strip (brainstorm 18, page structure 3): a wide, short panel that
+// looks like the top of a macOS desktop, with the AgentMeter item large and
+// crisp. It replaces the tall dropdown screenshot.
+import Shot from '~/components/agentmeter/Shot.astro';
+---
+
+<section class="not-prose mx-auto max-w-6xl px-4 pt-10 sm:px-6">
+  <div
+    class="overflow-hidden rounded-2xl border border-line bg-surface bg-[radial-gradient(900px_300px_at_15%_0%,rgb(207_231_228),transparent),radial-gradient(700px_300px_at_90%_100%,rgb(244_231_207),transparent)] dark:bg-[radial-gradient(900px_300px_at_15%_0%,rgb(14_52_51),transparent),radial-gradient(700px_300px_at_90%_100%,rgb(42_36_20),transparent)]"
+  >
+    <div
+      class="flex h-11 items-center justify-end gap-5 bg-white/55 px-5 text-sm font-medium text-[#1d1d1f] backdrop-blur dark:bg-black/40 dark:text-[#eeeeee]"
+    >
+      <Shot stem="menubar" alt="AgentMeter in the menu bar: one percentage per plan and budget" class="h-7 w-auto" />
+      <span class="hidden whitespace-nowrap sm:inline">Fri Oct 16 10:42</span>
+    </div>
+    <div class="px-6 py-7 sm:px-8">
+      <h2 class="font-heading text-2xl font-bold tracking-tight text-heading">One number per plan or budget.</h2>
+      <p class="mt-2 max-w-2xl text-muted">
+        Each entry shows how much is used. It turns orange near the limit and red past it. Click for the rest.
+      </p>
+    </div>
+  </div>
+</section>
