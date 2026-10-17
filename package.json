@@ -1,7 +1,7 @@
 {
-  "name": "agentmeter-site",
+  "name": "agenttacho-site",
   "version": "0.1.0",
-  "description": "AgentMeter website",
+  "description": "AgentTacho website",
   "type": "module",
   "private": true,
   "engines": {

@@ -6,7 +6,7 @@
 # Usage: scripts/make-placeholders.sh [target-dir]
 set -euo pipefail
 
-dir=${1:-src/assets/agentmeter}
+dir=${1:-src/assets/agenttacho}
 font=${PLACEHOLDER_FONT:-/System/Library/Fonts/Supplemental/Arial.ttf}
 mkdir -p "$dir"
 

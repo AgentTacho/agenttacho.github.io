@@ -1,5 +1,5 @@
 ---
-// One screenshot in its light and dark variant (src/assets/agentmeter/<stem>-light.webp
+// One screenshot in its light and dark variant (src/assets/agenttacho/<stem>-light.webp
 // and -dark.webp). The page shows the one that matches the theme, so no light
 // screenshot sits on the dark page.
 import type { ImageMetadata } from 'astro';
@@ -17,12 +17,12 @@ export interface Props {
 
 const { stem, alt, class: className = '', loading = 'lazy', widths, sizes } = Astro.props;
 
-const shots = import.meta.glob<{ default: ImageMetadata }>('/src/assets/agentmeter/*-{light,dark}.webp', {
+const shots = import.meta.glob<{ default: ImageMetadata }>('/src/assets/agenttacho/*-{light,dark}.webp', {
   eager: true,
 });
 
 function shot(variant: 'light' | 'dark'): ImageMetadata {
-  const found = shots[`/src/assets/agentmeter/${stem}-${variant}.webp`];
+  const found = shots[`/src/assets/agenttacho/${stem}-${variant}.webp`];
   if (!found) throw new Error(`missing screenshot ${stem}-${variant}.webp`);
   return found.default;
 }

@@ -1,6 +1,6 @@
 import { getPermalink } from './utils/permalinks';
 
-export const GITHUB = 'https://github.com/agentmeter-dev/agentmeter';
+export const GITHUB = 'https://github.com/AgentTacho/agenttacho';
 export const SPONSOR = 'https://github.com/sponsors/rhuss';
 export const PRIVACY_README = `${GITHUB}#security-and-privacy`;
 
@@ -19,7 +19,7 @@ export const headerData = {
 export const footerData = {
   links: [
     {
-      title: 'AgentMeter',
+      title: 'AgentTacho',
       links: [
         { text: 'Features', href: getPermalink('/#features') },
         { text: 'Privacy', href: getPermalink('/#privacy') },

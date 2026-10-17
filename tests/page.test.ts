@@ -18,7 +18,7 @@ const text = html
   .replace(/&nbsp;/g, ' ')
   .replace(/\s+/g, ' ');
 
-const GITHUB = 'https://github.com/agentmeter-dev/agentmeter';
+const GITHUB = 'https://github.com/AgentTacho/agenttacho';
 const SPONSOR = 'https://github.com/sponsors/rhuss';
 const SUBTITLE = 'Plan limits and budgets for Claude Code, Codex and OpenCode, in one line of your menu bar.';
 
@@ -35,7 +35,7 @@ test('has the headline and subtitle', { skip }, () => {
 test('has the download button with a version', { skip }, () => {
   const links = [...html.matchAll(/<a\b[^>]*href="?([^"\s>]+)"?[^>]*>([\s\S]*?)<\/a>/g)];
   const download = links.find(([, href]) =>
-    /\/releases\/download\/v\d+\.\d+\.\d+\/AgentMeter-\d+\.\d+\.\d+\.dmg$/.test(href)
+    /\/releases\/download\/v\d+\.\d+\.\d+\/[A-Za-z]+-\d+\.\d+\.\d+\.dmg$/.test(href)
   );
   assert.ok(download, 'a link to a release DMG');
   const version = download[1].match(/\/v(\d+\.\d+\.\d+)\//)?.[1];

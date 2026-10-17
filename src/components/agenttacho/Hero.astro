@@ -4,7 +4,7 @@
 import { Image } from 'astro:assets';
 import { Icon } from 'astro-icon/components';
 
-import mascot from '~/assets/agentmeter/mascot.webp';
+import mascot from '~/assets/agenttacho/mascot.webp';
 import { GITHUB } from '~/navigation';
 import type { Release } from '~/utils/release';
 
@@ -33,7 +33,7 @@ const { release } = Astro.props;
       <div class="mt-8 flex flex-wrap items-center gap-3">
         <a class="btn-primary gap-2" href={release.dmgUrl} data-download>
           <Icon name="tabler:download" class="h-5 w-5" />
-          Download AgentMeter
+          Download AgentTacho
           <span class="font-normal opacity-80">v{release.version}</span>
         </a>
         <a class="btn" href={GITHUB} target="_blank" rel="noopener noreferrer">
@@ -47,7 +47,7 @@ const { release } = Astro.props;
           <summary class="inline cursor-pointer underline decoration-dotted underline-offset-2">or Homebrew</summary>
           <code
             class="mt-2 block w-fit select-all rounded-md border border-line bg-surface px-2 py-1 font-mono text-xs text-default"
-            >brew install --cask rhuss/tap/agentmeter</code
+            >brew install --cask agenttacho/tap/agenttacho</code
           >
         </details>
       </div>
@@ -55,7 +55,7 @@ const { release } = Astro.props;
     <div class="flex justify-center">
       <Image
         src={mascot}
-        alt="AgentMeter mascot"
+        alt="AgentTacho mascot"
         loading="eager"
         widths={[240, 360, 480]}
         sizes="(min-width: 768px) 340px, 240px"

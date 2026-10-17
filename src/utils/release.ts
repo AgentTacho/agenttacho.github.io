@@ -1,4 +1,4 @@
-// The latest AgentMeter release, read at build time so the download button
+// The latest AgentTacho release, read at build time so the download button
 // shows the current version and links straight to its DMG (brainstorm 18,
 // "Latest version and download link"). It reads the same files the app's
 // update check uses: the GitHub release and its release-info.json. Any error
@@ -16,7 +16,7 @@ export interface Release {
   fromFallback: boolean;
 }
 
-const REPO = 'agentmeter-dev/agentmeter';
+const REPO = 'AgentTacho/agenttacho';
 const API_LATEST = `https://api.github.com/repos/${REPO}/releases/latest`;
 const PAGE_URL = `https://github.com/${REPO}/releases/latest`;
 const TIMEOUT_MS = 10_000;

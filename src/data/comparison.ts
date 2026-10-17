@@ -9,7 +9,7 @@ export interface ComparisonRow {
 
 export const comparison: { checked: string; columns: string[]; rows: ComparisonRow[] } = {
   checked: '2026-10-16',
-  columns: ['AgentMeter', 'CodexBar', 'Claude Usage Tracker', 'ClaudeBar', 'ccusage'],
+  columns: ['AgentTacho', 'CodexBar', 'Claude Usage Tracker', 'ClaudeBar', 'ccusage'],
   rows: [
     {
       label: 'Form',
