@@ -20,15 +20,16 @@ const { release } = Astro.props;
     class="mx-auto grid max-w-6xl items-center gap-10 px-4 pt-10 pb-6 sm:px-6 md:grid-cols-[1.4fr_1fr] md:pt-16 lg:gap-16"
   >
     <div>
-      <p class="text-sm font-bold uppercase tracking-wider text-eyebrow">Menu bar app for macOS</p>
+      <p class="text-sm font-bold uppercase tracking-wider text-eyebrow">Budgets and limits for coding agents</p>
       <h1
         class="mt-3 font-heading text-5xl font-bold leading-[1.04] tracking-tight text-heading md:text-6xl lg:text-[4.25rem]"
       >
-        Usage at a glance.<br />
-        <span class="text-accent">Nothing more.</span>
+        One glance.<br />
+        <span class="text-accent">Every account.</span>
       </h1>
       <p class="mt-6 max-w-xl text-xl leading-relaxed text-muted">
-        Plan limits and budgets for Claude Code, Codex and OpenCode, in one line of your menu bar.
+        See what's left and whether it lasts to the reset, across all your models and accounts, including several on the
+        same provider.
       </p>
       <div class="mt-8 flex flex-wrap items-center gap-3">
         <a class="btn-primary gap-2" href={release.dmgUrl} data-download>
@@ -42,7 +43,7 @@ const { release } = Astro.props;
         </a>
       </div>
       <div class="mt-4 text-sm text-muted">
-        Free and open source · macOS 14+ on Apple Silicon · signed and notarized ·&nbsp;
+        Free and open source · macOS 14+ on Apple Silicon ·&nbsp;
         <details class="inline">
           <summary class="inline cursor-pointer underline decoration-dotted underline-offset-2">or Homebrew</summary>
           <code

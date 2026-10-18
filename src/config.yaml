@@ -9,7 +9,7 @@ metadata:
   title:
     default: 'AgentTacho: usage at a glance'
     template: '%s | AgentTacho'
-  description: 'Plan limits and budgets for Claude Code, Codex and OpenCode, in one line of your menu bar.'
+  description: "Budgets and limits for Claude Code, Codex and OpenCode. See what's left and whether it lasts, across every account, including several on one provider."
   robots:
     index: true
     follow: true

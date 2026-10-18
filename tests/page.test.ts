@@ -20,16 +20,18 @@ const text = html
 
 const GITHUB = 'https://github.com/AgentTacho/agenttacho';
 const SPONSOR = 'https://github.com/sponsors/rhuss';
-const SUBTITLE = 'Plan limits and budgets for Claude Code, Codex and OpenCode, in one line of your menu bar.';
+const SUBTITLE =
+  "See what's left and whether it lasts to the reset, across all your models and accounts, including several on the same provider.";
 
 function count(pattern: RegExp): number {
   return (html.match(new RegExp(pattern.source, 'g')) ?? []).length;
 }
 
 test('has the headline and subtitle', { skip }, () => {
-  assert.ok(text.includes('Usage at a glance.'), 'headline first line');
-  assert.ok(text.includes('Nothing more.'), 'headline second line');
+  assert.ok(text.includes('One glance.'), 'headline first line');
+  assert.ok(text.includes('Every account.'), 'headline second line');
   assert.ok(text.includes(SUBTITLE), 'subtitle');
+  assert.ok(!/signed and notarized/i.test(text), 'no signed-and-notarized badge');
 });
 
 test('has the download button with a version', { skip }, () => {
