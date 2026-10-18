@@ -1,6 +1,6 @@
 # agenttacho.github.io
 
-The website of [AgentTacho](https://github.com/AgentTacho/agenttacho), a macOS menu bar app that shows the plan limits and budgets of Claude Code, Codex and OpenCode.
+The website of [AgentTacho](https://github.com/AgentTacho/agenttacho), served at https://agenttacho.dev. AgentTacho is a macOS menu bar app that shows the plan limits and budgets of Claude Code, Codex and OpenCode.
 
 Built with [Astro](https://astro.build) and the [AstroWind](https://github.com/arthelokyo/astrowind) template, starting from the [sandcast site](https://github.com/sandcast-dev/sandcast-dev.github.io).
 

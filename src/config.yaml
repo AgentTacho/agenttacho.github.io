@@ -1,6 +1,6 @@
 site:
   name: AgentTacho
-  site: 'https://agenttacho.github.io'
+  site: 'https://agenttacho.dev'
   base: '/'
   trailingSlash: false
 
