@@ -73,6 +73,10 @@ test('comparison flips to checkmark-means-good and drops one line', { skip }, ()
   assert.ok(!/one line/i.test(text), 'no "one line" claim anywhere');
 });
 
+test('comparison has the one-view row', { skip }, () => {
+  assert.ok(text.includes('Everything in one view'), 'one-view row present');
+});
+
 test('has nine feature cards in three rows', { skip }, () => {
   assert.equal(count(/data-feature-card/), 9);
   const labels = [...html.matchAll(/data-feature-row[^>]*>([^<]+)</g)].map(([, label]) => label.trim());

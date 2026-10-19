@@ -41,5 +41,9 @@ export const comparison: { checked: string; columns: string[]; rows: ComparisonR
       label: 'No telemetry',
       values: [true, 'Not stated', false, 'Not stated', 'Not stated'],
     },
+    {
+      label: 'Everything in one view',
+      values: [true, 'One item per provider, or merged', 'One profile, or all', 'Up to three providers', 'None'],
+    },
   ],
 };
