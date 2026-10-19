@@ -44,12 +44,6 @@ test('has the download button with a version', { skip }, () => {
   assert.ok(download[2].replace(/<[^>]+>/g, '').includes(`v${version}`), 'the button names the version');
 });
 
-test('labels the budget row without a period', { skip }, () => {
-  // ClaudeBar's Bedrock budget is daily, so the row must not say "weekly or monthly".
-  assert.ok(text.includes('Dollar budgets you set'), 'budget row label');
-  assert.ok(!/weekly or monthly dollar budgets/i.test(text), 'no period in the row label');
-});
-
 test('states the system requirements', { skip }, () => {
   // The app README: "macOS 14 or newer on Apple Silicon".
   assert.ok(text.includes('macOS 14+ on Apple Silicon'), 'requirements line names Apple Silicon');
@@ -61,26 +55,9 @@ test('links GitHub and Sponsors', { skip }, () => {
 });
 
 test('has the sections', { skip }, () => {
-  for (const id of ['features', 'privacy', 'compare']) {
+  for (const id of ['features', 'privacy']) {
     assert.match(html, new RegExp(`id="?${id}"?[\\s>]`), `section #${id}`);
   }
-});
-
-test('comparison flips to checkmark-means-good and drops one line', { skip }, () => {
-  assert.ok(text.includes('No browser cookies'), 'cookies row relabelled');
-  assert.ok(text.includes('No telemetry'), 'telemetry row relabelled');
-  assert.ok(!/reads browser cookies/i.test(text), 'old cookies label gone');
-  assert.ok(!/one line/i.test(text), 'no "one line" claim anywhere');
-});
-
-test('comparison has the one-view row', { skip }, () => {
-  assert.ok(text.includes('Everything in one view'), 'one-view row present');
-});
-
-test('one-view row describes ccusage fairly, not as "None"', { skip }, () => {
-  // ccusage is a CLI: under "Everything in one view" it prints its usage in one
-  // terminal view, so the cell must describe that, not read "None".
-  assert.ok(text.includes('CLI output'), 'ccusage one-view cell names its CLI output');
 });
 
 test('has nine feature cards in three rows', { skip }, () => {

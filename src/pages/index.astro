@@ -5,7 +5,6 @@ import MenuBarStrip from '~/components/agenttacho/MenuBarStrip.astro';
 import FeatureGrid from '~/components/agenttacho/FeatureGrid.astro';
 import SmallThings from '~/components/agenttacho/SmallThings.astro';
 import Privacy from '~/components/agenttacho/Privacy.astro';
-import Compare from '~/components/agenttacho/Compare.astro';
 import ClosingCta from '~/components/agenttacho/ClosingCta.astro';
 
 import { getLatestRelease } from '~/utils/release';
@@ -24,6 +23,5 @@ const release = await getLatestRelease(fetch, process.env.GITHUB_TOKEN);
   <FeatureGrid />
   <SmallThings />
   <Privacy />
-  <Compare />
   <ClosingCta release={release} />
 </Layout>
