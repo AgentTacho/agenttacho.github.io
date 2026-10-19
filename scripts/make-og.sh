@@ -19,10 +19,10 @@ magick "$assets/menubar-dark.webp" -resize x52 "$tmp/menubar.png"
 magick -size 1200x630 xc:'#071A1A' \
   "$tmp/icon.png" -geometry +72+64 -composite \
   -font "$bold" -fill '#EAF4F3' -pointsize 34 -annotate +162+112 'AgentTacho' \
-  -font "$bold" -fill '#EAF4F3' -pointsize 64 -annotate +72+250 'Usage at a glance.' \
-  -font "$bold" -fill '#2BDED4' -pointsize 64 -annotate +72+330 'Nothing more.' \
-  -font "$regular" -fill '#9DB5B3' -pointsize 26 -annotate +72+400 'Plan limits and budgets for Claude Code, Codex' \
-  -font "$regular" -fill '#9DB5B3' -pointsize 26 -annotate +72+436 'and OpenCode, in one line of your menu bar.' \
+  -font "$bold" -fill '#EAF4F3' -pointsize 64 -annotate +72+250 'One glance.' \
+  -font "$bold" -fill '#2BDED4' -pointsize 64 -annotate +72+330 'Every account.' \
+  -font "$regular" -fill '#9DB5B3' -pointsize 26 -annotate +72+400 'Budgets and limits for Claude Code, Codex and' \
+  -font "$regular" -fill '#9DB5B3' -pointsize 26 -annotate +72+436 'OpenCode, across every account in one view.' \
   "$tmp/menubar.png" -geometry +72+500 -composite \
   "$tmp/mascot.png" -gravity northeast -geometry +60+110 -composite \
   "$out"
