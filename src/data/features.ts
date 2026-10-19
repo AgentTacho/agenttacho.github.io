@@ -14,15 +14,15 @@ export const featureRows: { label: string; features: Feature[] }[] = [
     features: [
       {
         title: 'Plan limits',
-        body: 'Claude Pro and Max, and Codex on a ChatGPT plan: every window with its reset time, live from the provider, so other machines count too.',
+        body: 'Claude Pro and Max, and Codex on a ChatGPT plan: every window with its reset time, live from the provider, so other machines count too. Click a window to show it in the menu bar.',
         stem: 'plan-limits',
-        alt: 'A Claude Max section with 5-hour, 7-day and model limits and their reset times',
+        alt: 'A Claude Max section with 5-hour, 7-day and Fable limits and their reset times, the 5-hour window marked as the one shown in the menu bar',
       },
       {
         title: 'Pace',
-        body: 'A small meter shows whether you are on pace, behind, or about to run out before the reset. <code>↑</code> marks an entry that burns fast.',
+        body: 'A tick on each bar marks even use. When you run ahead, an orange note says by how much and when you run out before the reset. <code>↑</code> marks an entry that burns fast.',
         stem: 'pace',
-        alt: 'The pace meter tooltip with the run-out time',
+        alt: 'A 7-day limit at 70% with its tick and an orange note: 20% ahead, burning fast, runs out in 1d 12h',
       },
       {
         title: 'Alerts and colors',
@@ -39,7 +39,7 @@ export const featureRows: { label: string; features: Feature[] }[] = [
         title: 'Budgets you set',
         body: 'Pay-per-token spend on Vertex or the OpenAI API, against your own weekly or monthly budget.',
         stem: 'budget',
-        alt: 'A Vertex account with its spend against a monthly budget',
+        alt: 'A company budget with 430 of 500 dollars spent this month and an orange pace note',
       },
       {
         title: 'Shared budgets',
@@ -62,7 +62,7 @@ export const featureRows: { label: string; features: Feature[] }[] = [
         title: 'Details on demand',
         body: 'Tokens per model, project and harness, with a per-day trend, folded away until you need them.',
         stem: 'details',
-        alt: 'The details table with tokens per model and a per-day trend',
+        alt: 'The details table with tokens per model and the per-day row with its sum',
       },
       {
         title: 'Your bar, your way',
