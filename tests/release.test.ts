@@ -2,6 +2,9 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 
 import { getLatestRelease } from '../src/utils/release.ts';
+// The expected fallback is the file itself, so setting it after a release
+// (docs/website.md, Deploy) needs no test change.
+import fallback from '../src/data/release-fallback.json' with { type: 'json' };
 
 const API = 'https://api.github.com/repos/AgentTacho/agenttacho/releases/latest';
 const INFO = 'https://github.com/AgentTacho/agenttacho/releases/download/v0.4.1/release-info.json';
@@ -43,8 +46,8 @@ test('resolves version and dmg from the latest release', async () => {
 
 test('falls back when the API fails', async () => {
   const release = await getLatestRelease(stubFetch({ [API]: { status: 403 } }));
-  assert.equal(release.version, '0.5.0');
-  assert.ok(release.dmgUrl.endsWith('/releases/download/v0.5.0/AgentTacho-0.5.0.dmg'));
+  assert.equal(release.version, fallback.version);
+  assert.ok(release.dmgUrl.endsWith(`/releases/download/v${fallback.version}/${fallback.dmg}`));
   assert.equal(release.fromFallback, true);
 });
 
@@ -52,7 +55,7 @@ test('falls back when release-info is missing', async () => {
   const release = await getLatestRelease(
     stubFetch({ [API]: { status: 200, body: latest('v0.4.1', ['AgentTacho-0.4.1.dmg']) } })
   );
-  assert.equal(release.version, '0.5.0');
+  assert.equal(release.version, fallback.version);
   assert.equal(release.fromFallback, true);
 });
 
@@ -63,7 +66,7 @@ test('falls back when the dmg is not an asset', async () => {
       [INFO]: { status: 200, body: { version: '0.4.1', dmg: 'AgentTacho-0.4.1.dmg' } },
     })
   );
-  assert.equal(release.version, '0.5.0');
+  assert.equal(release.version, fallback.version);
   assert.equal(release.fromFallback, true);
 });
 
