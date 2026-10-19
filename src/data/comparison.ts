@@ -34,22 +34,12 @@ export const comparison: { checked: string; columns: string[]; rows: ComparisonR
       values: [true, false, false, false, false],
     },
     {
-      label: 'Reads browser cookies',
-      values: ['No', 'Optional', 'Optional (session key)', 'Optional', 'No'],
+      label: 'No browser cookies',
+      values: [true, 'Optional', 'Optional (session key)', 'Optional', true],
     },
     {
-      label: 'Telemetry',
-      values: ['None', 'Not stated', 'Anonymous daily heartbeat', 'Not stated', 'Not stated'],
-    },
-    {
-      label: 'Menu bar',
-      values: [
-        'One line, entries you choose',
-        'One item per provider, or merged',
-        'One profile, or all',
-        'Up to three providers',
-        'None',
-      ],
+      label: 'No telemetry',
+      values: [true, 'Not stated', false, 'Not stated', 'Not stated'],
     },
   ],
 };

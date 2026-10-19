@@ -66,6 +66,13 @@ test('has the sections', { skip }, () => {
   }
 });
 
+test('comparison flips to checkmark-means-good and drops one line', { skip }, () => {
+  assert.ok(text.includes('No browser cookies'), 'cookies row relabelled');
+  assert.ok(text.includes('No telemetry'), 'telemetry row relabelled');
+  assert.ok(!/reads browser cookies/i.test(text), 'old cookies label gone');
+  assert.ok(!/one line/i.test(text), 'no "one line" claim anywhere');
+});
+
 test('has nine feature cards in three rows', { skip }, () => {
   assert.equal(count(/data-feature-card/), 9);
   const labels = [...html.matchAll(/data-feature-row[^>]*>([^<]+)</g)].map(([, label]) => label.trim());
