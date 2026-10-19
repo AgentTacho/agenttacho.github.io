@@ -77,6 +77,12 @@ test('comparison has the one-view row', { skip }, () => {
   assert.ok(text.includes('Everything in one view'), 'one-view row present');
 });
 
+test('one-view row describes ccusage fairly, not as "None"', { skip }, () => {
+  // ccusage is a CLI: under "Everything in one view" it prints its usage in one
+  // terminal view, so the cell must describe that, not read "None".
+  assert.ok(text.includes('CLI output'), 'ccusage one-view cell names its CLI output');
+});
+
 test('has nine feature cards in three rows', { skip }, () => {
   assert.equal(count(/data-feature-card/), 9);
   const labels = [...html.matchAll(/data-feature-row[^>]*>([^<]+)</g)].map(([, label]) => label.trim());

@@ -43,7 +43,7 @@ export const comparison: { checked: string; columns: string[]; rows: ComparisonR
     },
     {
       label: 'Everything in one view',
-      values: [true, 'One item per provider, or merged', 'One profile, or all', 'Up to three providers', 'None'],
+      values: [true, 'One item per provider, or merged', 'One profile, or all', 'Up to three providers', 'CLI output'],
     },
   ],
 };
