@@ -32,11 +32,13 @@
 ### Task 1: Hero copy, metadata description, drop "signed and notarized"
 
 **Files:**
+
 - Modify: `src/components/agenttacho/Hero.astro` (eyebrow, H1, tagline, meta line)
 - Modify: `src/config.yaml` (`metadata.description`)
 - Test: `tests/page.test.ts`
 
 **Interfaces:**
+
 - Produces: the visible strings later tasks and tests rely on — eyebrow `Budgets and limits for coding agents`; headline lines `One glance.` and `Every account.`; tagline `See what's left and whether it lasts to the reset, across all your models and accounts, including several on the same provider.`
 
 - [ ] **Step 1: Update the page test to the new hero copy**
@@ -88,11 +90,13 @@ git commit -m "feat: lead the hero on budgets and accounts"
 ### Task 2: Comparison flip, intro rewrite, remove the "one line" row
 
 **Files:**
+
 - Modify: `src/data/comparison.ts` (two row labels + values, remove one row)
 - Modify: `src/components/agenttacho/Compare.astro` (intro paragraph)
 - Test: `tests/page.test.ts`
 
 **Interfaces:**
+
 - Consumes: `comparison.rows` / `Compare.astro`'s existing render (`true` -> check icon, `false` -> minus icon, string -> text).
 - Produces: comparison rows labelled `No browser cookies` and `No telemetry` where a checkmark means the good thing; no `Menu bar` / "one line" row.
 
@@ -141,10 +145,12 @@ git commit -m "feat: comparison leads on one view, not one line"
 ### Task 3: Add the "Everything in one view" comparison row (verified facts)
 
 **Files:**
+
 - Modify: `src/data/comparison.ts` (new row + `checked` date)
 - Test: `tests/page.test.ts`
 
 **Interfaces:**
+
 - Consumes: the five-column order `['AgentTacho', 'CodexBar', 'Claude Usage Tracker', 'ClaudeBar', 'ccusage']` from `comparison.columns`.
 - Produces: a row labelled `Everything in one view`.
 
@@ -186,10 +192,12 @@ git commit -m "feat: comparison row for one consolidated view"
 ### Task 4: Regenerate the social card
 
 **Files:**
+
 - Modify: `scripts/make-og.sh` (the baked headline and sub-text)
 - Regenerate: `src/assets/images/og.png`
 
 **Interfaces:**
+
 - Consumes: the hero copy from Task 1 (the card mirrors the page).
 
 - [ ] **Step 1: Update the text baked into `make-og.sh`**
