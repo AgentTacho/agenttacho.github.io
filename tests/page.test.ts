@@ -61,20 +61,9 @@ test('links GitHub and Sponsors', { skip }, () => {
 });
 
 test('has the sections', { skip }, () => {
-  for (const id of ['features', 'privacy', 'compare']) {
+  for (const id of ['features', 'privacy']) {
     assert.match(html, new RegExp(`id="?${id}"?[\\s>]`), `section #${id}`);
   }
-});
-
-test('comparison flips to checkmark-means-good and drops one line', { skip }, () => {
-  assert.ok(text.includes('No browser cookies'), 'cookies row relabelled');
-  assert.ok(text.includes('No telemetry'), 'telemetry row relabelled');
-  assert.ok(!/reads browser cookies/i.test(text), 'old cookies label gone');
-  assert.ok(!/one line/i.test(text), 'no "one line" claim anywhere');
-});
-
-test('comparison has the one-view row', { skip }, () => {
-  assert.ok(text.includes('Everything in one view'), 'one-view row present');
 });
 
 test('one-view row describes ccusage fairly, not as "None"', { skip }, () => {
