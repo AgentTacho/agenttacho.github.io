@@ -54,6 +54,18 @@ test('links GitHub and Sponsors', { skip }, () => {
   assert.ok(html.includes(SPONSOR), 'Sponsors link');
 });
 
+test('names and links CodexBar in the niche statement', { skip }, () => {
+  const niche = html.split('data-niche')[1]?.split('</section>')[0] ?? '';
+  assert.ok(niche, 'niche section present');
+  const nicheText = niche.replace(/<[^>]+>/g, ' ');
+  assert.ok(/CodexBar/.test(nicheText), 'names CodexBar');
+  assert.doesNotMatch(nicheText, /\d/, 'no numbers in the niche statement');
+  assert.match(niche, /href="?https:\/\/github\.com\/steipete\/CodexBar/, 'links CodexBar');
+  const link = niche.match(/<a\b[^>]*steipete\/CodexBar[^>]*>/)?.[0] ?? '';
+  assert.match(link, /target="?_blank/, 'opens in a new tab');
+  assert.match(link, /rel="?[^"]*noopener/, 'rel noopener');
+});
+
 test('has the sections', { skip }, () => {
   for (const id of ['features', 'privacy']) {
     assert.match(html, new RegExp(`id="?${id}"?[\\s>]`), `section #${id}`);

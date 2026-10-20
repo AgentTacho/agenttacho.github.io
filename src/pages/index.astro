@@ -2,6 +2,7 @@
 import Layout from '~/layouts/PageLayout.astro';
 import Hero from '~/components/agenttacho/Hero.astro';
 import MenuBarStrip from '~/components/agenttacho/MenuBarStrip.astro';
+import Niche from '~/components/agenttacho/Niche.astro';
 import FeatureGrid from '~/components/agenttacho/FeatureGrid.astro';
 import SmallThings from '~/components/agenttacho/SmallThings.astro';
 import Privacy from '~/components/agenttacho/Privacy.astro';
@@ -20,6 +21,7 @@ const release = await getLatestRelease(fetch, process.env.GITHUB_TOKEN);
 <Layout metadata={metadata}>
   <Hero release={release} />
   <MenuBarStrip />
+  <Niche />
   <FeatureGrid />
   <SmallThings />
   <Privacy />
