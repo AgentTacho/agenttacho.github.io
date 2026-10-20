@@ -20,7 +20,7 @@ export const featureRows: { label: string; features: Feature[] }[] = [
       },
       {
         title: 'Budgets you define',
-        body: 'Pay-per-token spend on Vertex or the OpenAI API, against your own weekly or monthly budget.',
+        body: 'Pay-per-token spend on Vertex or the OpenAI API, against your own weekly or monthly budget. One budget can span several accounts and harnesses, for a unified view of what you are spending.',
         stem: 'budget',
         alt: 'A company budget with 430 of 500 dollars spent this month and an orange pace note',
       },
