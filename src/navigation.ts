@@ -2,6 +2,7 @@ import { getPermalink } from './utils/permalinks';
 
 export const GITHUB = 'https://github.com/AgentTacho/agenttacho';
 export const SPONSOR = 'https://github.com/sponsors/rhuss';
+export const CODEXBAR = 'https://github.com/steipete/CodexBar';
 export const PRIVACY_README = `${GITHUB}#security-and-privacy`;
 
 export const headerData = {

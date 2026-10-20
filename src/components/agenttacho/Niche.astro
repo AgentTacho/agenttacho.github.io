@@ -1,0 +1,28 @@
+---
+// Niche statement (messaging reframe, design 2026-10-20): the positioning block.
+// Names and links CodexBar respectfully, no numbers, frames the smaller scope as
+// a deliberate choice. Keep it free of digits and dashes (page.test.ts checks).
+import { CODEXBAR } from '~/navigation';
+---
+
+<section data-niche class="not-prose mx-auto max-w-6xl scroll-mt-[72px] px-4 pt-24 sm:px-6">
+  <p class="text-center text-sm font-bold uppercase tracking-wider text-eyebrow">Why it stays small</p>
+  <h2 class="mt-2 text-center font-heading text-3xl font-bold tracking-tight text-heading md:text-4xl">
+    Focused on purpose.
+  </h2>
+  <div class="mx-auto mt-6 max-w-2xl space-y-4 text-lg leading-relaxed text-muted">
+    <p>
+      AgentTacho keeps the usage and budget of every account on one screen, so you can see what is left and decide what
+      to run next. It does one job and tries to do it well.
+    </p>
+    <p>
+      It is not built to do everything. If you want the widest coverage and the longest feature list, <a
+        class="font-semibold text-link underline underline-offset-4"
+        href={CODEXBAR}
+        target="_blank"
+        rel="noopener noreferrer">CodexBar</a
+      > is a larger, more feature-rich project with many more providers, and a great choice. AgentTacho stays small on purpose,
+      a quiet view of usage and budgets for the agents you actually run. You pick the tool that fits.
+    </p>
+  </div>
+</section>

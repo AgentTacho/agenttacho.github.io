@@ -54,26 +54,42 @@ test('links GitHub and Sponsors', { skip }, () => {
   assert.ok(html.includes(SPONSOR), 'Sponsors link');
 });
 
+test('names and links CodexBar in the niche statement', { skip }, () => {
+  const niche = html.split('data-niche')[1]?.split('</section>')[0] ?? '';
+  assert.ok(niche, 'niche section present');
+  const nicheText = niche.replace(/<[^>]+>/g, ' ');
+  assert.ok(/CodexBar/.test(nicheText), 'names CodexBar');
+  assert.doesNotMatch(nicheText, /\d/, 'no numbers in the niche statement');
+  assert.match(niche, /href="?https:\/\/github\.com\/steipete\/CodexBar/, 'links CodexBar');
+  const link = niche.match(/<a\b[^>]*steipete\/CodexBar[^>]*>/)?.[0] ?? '';
+  assert.match(link, /target="?_blank/, 'opens in a new tab');
+  assert.match(link, /rel="?[^"]*noopener/, 'rel noopener');
+});
+
 test('has the sections', { skip }, () => {
   for (const id of ['features', 'privacy']) {
     assert.match(html, new RegExp(`id="?${id}"?[\\s>]`), `section #${id}`);
   }
 });
 
-test('has nine feature cards in three rows', { skip }, () => {
-  assert.equal(count(/data-feature-card/), 9);
-  const labels = [...html.matchAll(/data-feature-row[^>]*>([^<]+)</g)].map(([, label]) => label.trim());
-  assert.deepEqual(labels, ['Limits', 'Budgets', 'Your setup']);
+test('has six feature cards in three pairs', { skip }, () => {
+  assert.equal(count(/data-feature-card/), 6);
+  // HTML-encodes the ampersand, so decode before comparing.
+  const labels = [...html.matchAll(/data-feature-row[^>]*>([^<]+)</g)].map(([, l]) => l.trim().replace(/&amp;/g, '&'));
+  assert.deepEqual(labels, ['Usage & limits', 'Accounts', 'Control']);
 });
 
-test('has the small things', { skip }, () => {
-  assert.equal(count(/data-small-thing/), 5);
+test('has the one-line strip', { skip }, () => {
+  assert.equal(count(/data-small-thing/), 6);
+  assert.ok(text.includes('Shared budgets'), 'shared budgets demoted to a one-liner');
+  assert.ok(text.includes('Notifications'), 'notifications mentioned');
+  assert.ok(!/one json file/i.test(text), 'one JSON file removed');
 });
 
 test('every feature image has a dark variant', { skip }, () => {
   // Each card is an <article data-feature-card>; its markup ends at </article>.
   const cards = html.split(/data-feature-card/).slice(1);
-  assert.equal(cards.length, 9);
+  assert.equal(cards.length, 6);
   for (const card of cards) {
     const body = card.split('</article>')[0];
     assert.match(body, /data-theme-variant="?light/, 'light variant');

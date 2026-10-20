@@ -19,7 +19,7 @@ shot() {
 }
 
 shot menubar 900x124
-for stem in plan-limits pace alert budget prices details harnesses; do
+for stem in plan-limits pace alert budget prices details harnesses same-provider; do
   shot "$stem" 1660x400
 done
 shot groups 1600x1000

@@ -10,65 +10,30 @@ export interface Feature {
 
 export const featureRows: { label: string; features: Feature[] }[] = [
   {
-    label: 'Limits',
+    label: 'Usage & limits',
     features: [
       {
-        title: 'Plan limits',
-        body: 'Claude Pro and Max, and Codex on a ChatGPT plan: every window with its reset time, live from the provider, so other machines count too. Click a window to show it in the menu bar.',
-        stem: 'plan-limits',
-        alt: 'A Claude Max section with 5-hour, 7-day and Fable limits and their reset times, the 5-hour window marked as the one shown in the menu bar',
+        title: 'Usage at a glance',
+        body: 'Every plan limit with its reset time, live from the provider, and an orange pace note when you are running ahead. Expand an account to see tokens by model, project and harness.',
+        stem: 'dropdown',
+        alt: 'The dropdown with plan limits and their reset times, a pace note, and one account’s details expanded',
       },
       {
-        title: 'Pace',
-        body: 'A tick on each bar marks even use. When you run ahead, an orange note says by how much and when you run out before the reset. <code>↑</code> marks an entry that burns fast.',
-        stem: 'pace',
-        alt: 'A 7-day limit at 70% with its tick and an orange note: 20% ahead, burning fast, runs out in 1d 12h',
-      },
-      {
-        title: 'Alerts and colors',
-        body: 'Orange near the limit, red past it, and a notification when usage crosses your thresholds, 80% and 100% by default.',
-        stem: 'alert',
-        alt: 'A notification that a budget crossed 80%',
-      },
-    ],
-  },
-  {
-    label: 'Budgets',
-    features: [
-      {
-        title: 'Budgets you set',
+        title: 'Budgets you define',
         body: 'Pay-per-token spend on Vertex or the OpenAI API, against your own weekly or monthly budget.',
         stem: 'budget',
         alt: 'A company budget with 430 of 500 dollars spent this month and an orange pace note',
       },
-      {
-        title: 'Shared budgets',
-        body: 'Several accounts under one budget, like a monthly limit your company sets.',
-        stem: 'groups',
-        alt: 'Settings, Groups tab, with a shared monthly company budget',
-      },
-      {
-        title: 'Price lists you control',
-        body: 'A built-in price table, one-click imports from LiteLLM, CSV import and export, and your own overrides. Every import shows a preview first.',
-        stem: 'prices',
-        alt: 'Settings, Prices tab, with the Import menu',
-      },
     ],
   },
   {
-    label: 'Your setup',
+    label: 'Accounts',
     features: [
       {
-        title: 'Details on demand',
-        body: 'Tokens per model, project and harness, with a per-day trend, folded away until you need them.',
-        stem: 'details',
-        alt: 'The details table with tokens per model and the per-day row with its sum',
-      },
-      {
-        title: 'Your bar, your way',
-        body: 'Pick the entries and their order with a live preview. Show levels as colored text, as a pill, or not at all.',
-        stem: 'menubar-settings',
-        alt: 'Settings, Menu Bar tab, with the live preview of the bar',
+        title: 'Same provider, more than once',
+        body: 'Run two Claude Max subscriptions next to each other by pointing each one at its own directory. Both show on the same screen.',
+        stem: 'same-provider',
+        alt: 'Two Claude Max accounts side by side, each with its own limits and reset times',
       },
       {
         title: 'Three agents, one view',
@@ -78,9 +43,36 @@ export const featureRows: { label: string; features: Feature[] }[] = [
       },
     ],
   },
+  {
+    label: 'Control',
+    features: [
+      {
+        title: 'Price lists you manage',
+        body: 'A built-in price table, one-click imports from LiteLLM, CSV import and export, and your own overrides. Every import shows a preview first.',
+        stem: 'prices',
+        alt: 'Settings, Prices tab, with the Import menu',
+      },
+      {
+        title: 'Your bar, your way',
+        body: 'Pick the entries and their order with a live preview. Show levels as colored text, as a pill, or not at all.',
+        stem: 'menubar-settings',
+        alt: 'Settings, Menu Bar tab, with the live preview of the bar',
+      },
+    ],
+  },
 ];
 
 export const smallThings: { title: string; body: string; icon: string }[] = [
+  {
+    title: 'Notifications',
+    body: 'A banner when usage crosses your thresholds, 80% and 100% by default.',
+    icon: 'tabler:bell',
+  },
+  {
+    title: 'Shared budgets',
+    body: 'Put several accounts under one budget, like a monthly limit your company sets.',
+    icon: 'tabler:building',
+  },
   {
     title: 'Works offline',
     body: 'The last good values survive a restart and a missing network, marked <code>~</code> when they may be out of date.',
@@ -100,10 +92,5 @@ export const smallThings: { title: string; body: string; icon: string }[] = [
     title: 'Sign-in alerts',
     body: 'A notification when an agent’s sign-in stops working.',
     icon: 'tabler:key',
-  },
-  {
-    title: 'One JSON file',
-    body: 'Settings write a plain configuration file that you can edit by hand.',
-    icon: 'tabler:file-code',
   },
 ];
