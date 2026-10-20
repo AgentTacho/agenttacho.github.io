@@ -15,7 +15,7 @@ export const featureRows: { label: string; features: Feature[] }[] = [
       {
         title: 'Usage at a glance',
         body: 'Every plan limit with its reset time, live from the provider, and an orange pace note when you are running ahead. Expand an account to see tokens by model, project and harness.',
-        stem: 'dropdown',
+        stem: 'glance',
         alt: 'The dropdown with plan limits and their reset times, a pace note, and one account’s details expanded',
       },
       {
