@@ -64,6 +64,16 @@ export const featureRows: { label: string; features: Feature[] }[] = [
 
 export const smallThings: { title: string; body: string; icon: string }[] = [
   {
+    title: 'Notifications',
+    body: 'A banner when usage crosses your thresholds, 80% and 100% by default.',
+    icon: 'tabler:bell',
+  },
+  {
+    title: 'Shared budgets',
+    body: 'Put several accounts under one budget, like a monthly limit your company sets.',
+    icon: 'tabler:building',
+  },
+  {
     title: 'Works offline',
     body: 'The last good values survive a restart and a missing network, marked <code>~</code> when they may be out of date.',
     icon: 'tabler:wifi-off',
@@ -82,10 +92,5 @@ export const smallThings: { title: string; body: string; icon: string }[] = [
     title: 'Sign-in alerts',
     body: 'A notification when an agent’s sign-in stops working.',
     icon: 'tabler:key',
-  },
-  {
-    title: 'One JSON file',
-    body: 'Settings write a plain configuration file that you can edit by hand.',
-    icon: 'tabler:file-code',
   },
 ];

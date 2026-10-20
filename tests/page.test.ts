@@ -79,8 +79,11 @@ test('has six feature cards in three pairs', { skip }, () => {
   assert.deepEqual(labels, ['Usage & limits', 'Accounts', 'Control']);
 });
 
-test('has the small things', { skip }, () => {
-  assert.equal(count(/data-small-thing/), 5);
+test('has the one-line strip', { skip }, () => {
+  assert.equal(count(/data-small-thing/), 6);
+  assert.ok(text.includes('Shared budgets'), 'shared budgets demoted to a one-liner');
+  assert.ok(text.includes('Notifications'), 'notifications mentioned');
+  assert.ok(!/one json file/i.test(text), 'one JSON file removed');
 });
 
 test('every feature image has a dark variant', { skip }, () => {
