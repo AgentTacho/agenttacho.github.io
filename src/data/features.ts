@@ -48,7 +48,7 @@ export const featureRows: { label: string; features: Feature[] }[] = [
         alt: 'Settings, Groups tab, with a shared monthly company budget',
       },
       {
-        title: 'Prices you control',
+        title: 'Price lists you control',
         body: 'A built-in price table, one-click imports from LiteLLM, CSV import and export, and your own overrides. Every import shows a preview first.',
         stem: 'prices',
         alt: 'Settings, Prices tab, with the Import menu',
