@@ -1,6 +1,7 @@
 ---
 // Privacy (brainstorm 18, page structure 6), from the README's "Security and
-// privacy" section as of 2026-10-16. Keep it in step with that section.
+// privacy" section as of 2026-10-21 (spec 033 free reset tickets). Keep it in
+// step with that section.
 import { Icon } from 'astro-icon/components';
 import { PRIVACY_README } from '~/navigation';
 
@@ -8,7 +9,7 @@ const points = [
   {
     icon: 'tabler:key',
     title: 'Your agents’ own sign-in, read only',
-    body: 'To show plan limits, AgentTacho reads the sign-in tokens Claude Code and Codex already have, and sends each one only to that provider’s usage endpoint. It never refreshes or changes a login.',
+    body: 'To show plan limits and free limit resets, AgentTacho reads the sign-in tokens Claude Code and Codex already have, and sends each one only to that provider’s usage endpoints. It never refreshes or changes a login, and never redeems a reset.',
   },
   {
     icon: 'tabler:cookie-off',
@@ -18,7 +19,7 @@ const points = [
   {
     icon: 'tabler:eye-off',
     title: 'No telemetry',
-    body: 'Besides asking Anthropic and ChatGPT for your plan limits, the only automatic request is the update check, which you can turn off. Price lists download only when you ask.',
+    body: 'Besides asking Anthropic and ChatGPT for your plan limits and free limit resets, the only automatic request is the update check, which you can turn off. Price lists download only when you ask.',
   },
   {
     icon: 'tabler:file-search',
