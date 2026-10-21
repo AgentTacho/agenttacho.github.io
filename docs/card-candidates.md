@@ -19,7 +19,7 @@ The app pull request that ships a card-worthy feature adds its entry here in a s
 ### Free reset tickets
 
 - **Feature**: Free limit resets at a glance
-- **App**: brainstorm 32, spec 033 (`specs/033-free-reset-tickets`), branch `033-free-reset-tickets`
-- **Status**: planned
+- **App**: brainstorm 32, spec 033 (`specs/033-free-reset-tickets`), merged to main as `ff4301c`
+- **Status**: ready
 - **Shot idea**: a Claude section header with gift glyphs next to the account name and a tooltip naming the expiry; the demo scenario already gives `acc-max` two tickets (one expiring in 2d 4h, one without expiry), so the existing `glance` shot shows the glyphs
 - **Card copy draft**: Claude and Codex sometimes grant free limit resets. AgentTacho shows each one next to the account and reminds you before it expires.
