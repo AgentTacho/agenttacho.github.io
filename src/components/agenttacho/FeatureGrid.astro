@@ -20,11 +20,11 @@ import { featureRows } from '~/data/features';
         <div class="grid grid-cols-1 gap-5 lg:grid-cols-2">
           {row.features.map((feature) => (
             <article class="flex flex-col overflow-hidden rounded-2xl border border-line bg-surface" data-feature-card>
-              <div class="flex h-[260px] items-center justify-center bg-panel p-2">
+              <div class="flex h-[260px] items-center justify-center bg-tint p-2 dark:bg-panel">
                 <Shot
                   stem={feature.stem}
                   alt={feature.alt}
-                  class="max-h-full w-auto max-w-full rounded object-contain"
+                  class="max-h-full w-auto max-w-full rounded object-contain shadow-md dark:shadow-none"
                   widths={[600, 1200]}
                   sizes="(min-width: 1024px) 560px, 90vw"
                 />
