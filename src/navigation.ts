@@ -4,6 +4,8 @@ export const GITHUB = 'https://github.com/AgentTacho/agenttacho';
 export const SPONSOR = 'https://github.com/sponsors/rhuss';
 export const CODEXBAR = 'https://github.com/steipete/CodexBar';
 export const PRIVACY_README = `${GITHUB}#security-and-privacy`;
+export const AUTHOR = 'https://ro14nd.de';
+export const CC_SPEX = 'https://github.com/rhuss/cc-spex';
 
 export const headerData = {
   links: [
@@ -38,6 +40,7 @@ export const footerData = {
   secondaryLinks: [{ text: 'License (Apache 2.0)', href: `${GITHUB}/blob/main/LICENSE` }],
   socialLinks: [{ ariaLabel: 'GitHub', icon: 'tabler:brand-github', href: GITHUB }],
   footNote: `
-    Built with spec-driven development and Claude Code, by Roland Huß.
+    Built by <a class="text-primary hover:underline" href="${AUTHOR}">Roland Huß</a> and a team of
+    <a class="text-primary hover:underline" href="${CC_SPEX}">spec-driven</a> agents who know their limits.
   `,
 };
