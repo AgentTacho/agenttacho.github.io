@@ -78,7 +78,7 @@ That is why usage and budget numbers are always on screen.
    accounts, including several on the same provider." (Builder's call whether
    the subtitle needs a light edit to match the reframed tone.)
 2. **Menu-bar strip** (`MenuBarStrip.astro`) — the proof. Kept, directly under
-   the hero. Its copy stays focused on *what you see at a glance* (today's "One
+   the hero. Its copy stays focused on _what you see at a glance_ (today's "One
    number per plan or budget" direction). It must NOT drift into customization
    messaging; that belongs to card 6.
 3. **Niche statement** — the positioning. New text block. Sits below the strip
@@ -99,23 +99,19 @@ That is why usage and budget numbers are always on screen.
 4. **Six-card screenshot grid (2 x 3)**, grouped in three pairs:
    - Pair 1 — Usage & limits:
      1. **Usage at a glance** — the dropdown showing plan limits and pace with
-        the details expanded, in one view. This merges today's separate *Plan
-        limits*, *Pace*, and *Details on demand* cards into one. Needs a new or
+        the details expanded, in one view. This merges today's separate _Plan
+        limits_, _Pace_, and _Details on demand_ cards into one. Needs a new or
         re-composed screenshot showing all three in a single capture.
      2. **Budgets you define** — your own weekly/monthly dollar budget on
         pay-per-token accounts, with pace. (Uses the existing `budget` shot;
         the configuration screen does NOT get a screenshot.)
-   - Pair 2 — Accounts:
-     3. **Same provider, more than once** — two Claude Max subscriptions side by
-        side via separate directories. **New screenshot required.**
-     4. **Three agents, one view** — Claude Code, Codex, OpenCode; an account
-        stands for who pays. (Uses the existing `harnesses` shot.)
-   - Pair 3 — Control:
-     5. **Price lists you manage** — built-in table, LiteLLM/CSV import,
-        overrides, preview before import. (Uses the existing `prices` shot.)
-     6. **Your bar, your way** — pick the entries and their order with a live
-        preview. (Uses the existing `menubar-settings` shot.) This is the
-        customization beat, distinct from the strip's at-a-glance beat.
+   - Pair 2 — Accounts: 3. **Same provider, more than once** — two Claude Max subscriptions side by
+     side via separate directories. **New screenshot required.** 4. **Three agents, one view** — Claude Code, Codex, OpenCode; an account
+     stands for who pays. (Uses the existing `harnesses` shot.)
+   - Pair 3 — Control: 5. **Price lists you manage** — built-in table, LiteLLM/CSV import,
+     overrides, preview before import. (Uses the existing `prices` shot.) 6. **Your bar, your way** — pick the entries and their order with a live
+     preview. (Uses the existing `menubar-settings` shot.) This is the
+     customization beat, distinct from the strip's at-a-glance beat.
 5. **One-line strip** — mentions, no screenshots:
    - Notifications at your thresholds (today's alert threshold behaviour)
    - Shared budgets across accounts (several accounts under one budget)
@@ -123,10 +119,10 @@ That is why usage and budget numbers are always on screen.
    - Adaptive refresh
    - Verified updates
    - Sign-in alerts
-   The old "small things" section is absorbed here; there is no separate
-   small-things row.
-   (Dropped during review: "Limits freely definable" turned out to be the same
-   capability as card 2 "Budgets you define," so it is not a separate line.)
+     The old "small things" section is absorbed here; there is no separate
+     small-things row.
+     (Dropped during review: "Limits freely definable" turned out to be the same
+     capability as card 2 "Budgets you define," so it is not a separate line.)
 6. **Privacy** — kept as is (reads from local directories, nothing leaves the
    machine).
 7. **Closing CTA** — kept as is.
@@ -175,16 +171,18 @@ This ships in two phases, and the site PR does **not** block on the app repo.
 statement, six-card grid, one-line strip, and test updates. For the two
 screenshots that do not exist yet, use the nearest existing shots so the build
 stays green:
+
 - Card 1 "Usage at a glance": reuse the existing `dropdown` capture for now.
 - Card 3 "Same provider, more than once": use a nearest-fit placeholder (there
   is no existing side-by-side shot), clearly tracked for replacement.
-`Shot.astro` fails the build if a `<stem>-light/dark.webp` pair is missing, so
-every referenced stem must have a pair present even in phase 1.
+  `Shot.astro` fails the build if a `<stem>-light/dark.webp` pair is missing, so
+  every referenced stem must have a pair present even in phase 1.
 
 **Phase 2 (app repo `agentmeter`, tracked separately):** produce the two real
 captures from the demo build and drop the obsolete ones. This is tracked in the
 app repo brainstorm `brainstorm/30-site-reframe-screenshots.md` (created
 alongside this design). It covers:
+
 - Two new/recomposed captures: "usage at a glance" (one dropdown with plan
   limits, pace, and details expanded together) and "same provider, more than
   once" (two Claude Max accounts side by side via separate directories).
