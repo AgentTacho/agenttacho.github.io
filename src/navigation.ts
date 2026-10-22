@@ -12,9 +12,7 @@ export const headerData = {
     { text: 'Features', href: getPermalink('/#features') },
     { text: 'Privacy', href: getPermalink('/#privacy') },
   ],
-  actions: [
-    { text: 'GitHub', href: GITHUB, target: '_blank', icon: 'tabler:brand-github' },
-  ],
+  actions: [{ text: 'GitHub', href: GITHUB, target: '_blank', icon: 'tabler:brand-github' }],
 };
 
 export const footerData = {
