@@ -14,7 +14,6 @@ export const headerData = {
   ],
   actions: [
     { text: 'GitHub', href: GITHUB, target: '_blank', icon: 'tabler:brand-github' },
-    { text: 'Sponsor', href: SPONSOR, target: '_blank', icon: 'tabler:heart' },
   ],
 };
 
