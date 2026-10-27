@@ -31,13 +31,13 @@ export const featureRows: { label: string; features: Feature[] }[] = [
     features: [
       {
         title: 'Same provider, more than once',
-        body: 'Run two Claude Max subscriptions next to each other by pointing each one at its own directory. Both show on the same screen.',
+        body: 'Run two Claude Max subscriptions next to each other by pointing each one at its own directory, even when their profiles share one session folder. Both show on the same screen.',
         stem: 'same-provider',
         alt: 'Two Claude Max accounts side by side, each with its own limits and reset times',
       },
       {
         title: 'Three agents, one view',
-        body: 'Claude Code, Codex and OpenCode. An account stands for who pays, so Vertex spend from Claude Code and OpenCode lands in one budget.',
+        body: 'Claude Code, Codex and OpenCode. Put the Claude Code and OpenCode accounts that bill Vertex into one budget group, and their spend lands in one budget.',
         stem: 'harnesses',
         alt: 'The details table by harness: Claude Code, Codex and OpenCode',
       },

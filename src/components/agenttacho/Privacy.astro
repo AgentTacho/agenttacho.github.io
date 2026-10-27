@@ -1,6 +1,6 @@
 ---
 // Privacy (brainstorm 18, page structure 6), from the README's "Security and
-// privacy" section as of 2026-10-21 (spec 033 free reset tickets). Keep it in
+// privacy" section as of 2026-10-27 (spec 037 profile matching). Keep it in
 // step with that section.
 import { Icon } from 'astro-icon/components';
 import { PRIVACY_README } from '~/navigation';
@@ -14,7 +14,7 @@ const points = [
   {
     icon: 'tabler:cookie-off',
     title: 'No browser, no cookies',
-    body: 'It never opens your browser’s data or its cookies. Token counts and spend come from the files your agents write on this Mac.',
+    body: 'It never opens your browser’s data or its cookies. Token counts and spend come from the files your agents write on this Mac. From the request records in Claude Code’s session files it takes only the folder a session ran from, and keeps nothing else of them.',
   },
   {
     icon: 'tabler:eye-off',
