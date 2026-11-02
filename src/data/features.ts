@@ -60,6 +60,23 @@ export const featureRows: { label: string; features: Feature[] }[] = [
       },
     ],
   },
+  {
+    label: 'Extras',
+    features: [
+      {
+        title: 'Free limit resets at a glance',
+        body: 'Claude and Codex sometimes grant free limit resets. AgentTacho shows each one next to the account and reminds you before it expires.',
+        stem: 'tickets',
+        alt: 'A Claude Max account with two gift icons for free limit resets next to its name, above its 7-day limit',
+      },
+      {
+        title: 'Free models, valued at a real price',
+        body: 'Track free gateway models without a made-up limit, and see what their tokens would have cost at a real model’s price.',
+        stem: 'no-limit',
+        alt: 'An account for free models with 48.2M tokens this month, worth about 108 dollars at claude-opus-5-5 prices',
+      },
+    ],
+  },
 ];
 
 export const smallThings: { title: string; body: string; icon: string }[] = [
