@@ -20,7 +20,7 @@ export const featureRows: { label: string; features: Feature[] }[] = [
       },
       {
         title: 'Budgets you define',
-        body: 'Pay-per-token spend on Vertex, the OpenAI API or a company gateway, against your own weekly or monthly budget. One budget can span several accounts and harnesses, for a unified view of what you are spending.',
+        body: 'Pay-per-token spend on Vertex, the OpenAI API or a company gateway, against your own weekly or monthly budget. One budget can span several accounts and harnesses, for a unified view of what you are spending. Free models can go without a limit and show what their tokens would have cost.',
         stem: 'budget',
         alt: 'A company budget with 430 of 500 dollars spent this month and an orange pace note',
       },
