@@ -72,11 +72,11 @@ test('has the sections', { skip }, () => {
   }
 });
 
-test('has six feature cards in three pairs', { skip }, () => {
-  assert.equal(count(/data-feature-card/), 6);
+test('has eight feature cards in four pairs', { skip }, () => {
+  assert.equal(count(/data-feature-card/), 8);
   // HTML-encodes the ampersand, so decode before comparing.
   const labels = [...html.matchAll(/data-feature-row[^>]*>([^<]+)</g)].map(([, l]) => l.trim().replace(/&amp;/g, '&'));
-  assert.deepEqual(labels, ['Usage & limits', 'Accounts', 'Control']);
+  assert.deepEqual(labels, ['Usage & limits', 'Accounts', 'Control', 'Extras']);
 });
 
 test('has the one-line strip', { skip }, () => {
@@ -89,7 +89,7 @@ test('has the one-line strip', { skip }, () => {
 test('every feature image has a dark variant', { skip }, () => {
   // Each card is an <article data-feature-card>; its markup ends at </article>.
   const cards = html.split(/data-feature-card/).slice(1);
-  assert.equal(cards.length, 6);
+  assert.equal(cards.length, 8);
   for (const card of cards) {
     const body = card.split('</article>')[0];
     assert.match(body, /data-theme-variant="?light/, 'light variant');

@@ -16,18 +16,4 @@ The app pull request that ships a card-worthy feature adds its entry here in a s
 
 ## Candidates
 
-### Free reset tickets
-
-- **Feature**: Free limit resets at a glance
-- **App**: brainstorm 32, spec 033 (`specs/033-free-reset-tickets`), merged to main as `ff4301c`
-- **Status**: ready
-- **Shot idea**: a Claude section header with gift glyphs next to the account name and a tooltip naming the expiry; the demo scenario already gives `acc-max` two tickets (one expiring in 2d 4h, one without expiry), so the existing `glance` shot shows the glyphs
-- **Card copy draft**: Claude and Codex sometimes grant free limit resets. AgentTacho shows each one next to the account and reminds you before it expires.
-
-### Accounts without a limit
-
-- **Feature**: Free models, valued at a real price
-- **App**: brainstorm 41, spec 041 (`specs/041-no-limit-accounts`), merged in AgentTacho/agenttacho `fd90648`
-- **Status**: ready
-- **Shot idea**: the No limit section of the demo account `acc-free` ("Free models"): the token headline ("48.2M") and below it "≈ $108 at claude-opus-5-5 prices" with the reset time on the right; the default demo scenario already shows it after the Side project section
-- **Card copy draft**: Track free gateway models without a made-up limit, and see what they would have cost at a real model's price.
+None right now.

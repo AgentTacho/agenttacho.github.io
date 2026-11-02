@@ -20,7 +20,7 @@ export const featureRows: { label: string; features: Feature[] }[] = [
       },
       {
         title: 'Budgets you define',
-        body: 'Pay-per-token spend on Vertex, the OpenAI API or a company gateway, against your own weekly or monthly budget. One budget can span several accounts and harnesses, for a unified view of what you are spending. Free models can go without a limit and show what their tokens would have cost.',
+        body: 'Pay-per-token spend on Vertex, the OpenAI API or a company gateway, against your own weekly or monthly budget. One budget can span several accounts and harnesses, for a unified view of what you are spending.',
         stem: 'budget',
         alt: 'A company budget with 430 of 500 dollars spent this month and an orange pace note',
       },
@@ -57,6 +57,23 @@ export const featureRows: { label: string; features: Feature[] }[] = [
         body: 'Pick the entries and their order with a live preview. Show levels as colored text, as a pill, or not at all.',
         stem: 'menubar-settings',
         alt: 'The live preview of the bar with the levels as orange and red pills, and the level color set to Pill',
+      },
+    ],
+  },
+  {
+    label: 'Extras',
+    features: [
+      {
+        title: 'Free limit resets at a glance',
+        body: 'Claude and Codex sometimes grant free limit resets. AgentTacho shows each one next to the account and reminds you before it expires.',
+        stem: 'tickets',
+        alt: 'A Claude Max account with two gift icons for free limit resets next to its name, above its 7-day limit',
+      },
+      {
+        title: 'Free models, valued at a real price',
+        body: 'Track free gateway models without a made-up limit, and see what their tokens would have cost at a real model’s price.',
+        stem: 'no-limit',
+        alt: 'An account for free models with 48.2M tokens this month, worth about 108 dollars at claude-opus-5-5 prices',
       },
     ],
   },
